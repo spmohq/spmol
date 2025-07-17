@@ -17,11 +17,12 @@
       --card-bg: #ffffff;
       --border-color: #e0e0e0;
       --text-muted: #5a748c;
+      --page-bg: #e6f2ed; 
     }
 
     body {
       font-family: system-ui, sans-serif;
-      background-color: #e6f2ed;
+      background-color: var(--page-bg);
       color: #2c2c2c;
       margin: 0;
       display: flex;
@@ -30,7 +31,7 @@
     }
     
     main {
-      flex-grow: 1; /* Ensures the main content pushes the footer down */
+      flex-grow: 1; 
     }
 
     /* --- Styles for Header --- */
@@ -136,12 +137,39 @@
         cursor: pointer;
         text-decoration: none;
     }
+
+    /* --- Styles for the Affiliate Button --- */
+    .button-container {
+        text-align: left;
+        margin: 15px 0 25px 0;
+    }
+    .container-box .affiliate-button {
+        display: inline-block;
+        background-color: var(--brand-blue);
+        color: var(--page-bg);
+        padding: 15px 30px;
+        font-family: system-ui, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        border: none; /* Add this for elements that aren't native buttons */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        cursor: pointer; /* Ensure cursor is a pointer */
+    }
+    .container-box .affiliate-button:hover {
+        background-color: #1e3a52;
+        color: var(--page-bg);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
     
     /* --- New Footer Styles --- */
     footer {
         text-align: center;
         padding: 25px 40px;
-        margin-top: auto; /* Pushes footer to the bottom */
+        margin-top: auto;
         font-size: 14px;
         color: var(--text-muted);
     }
@@ -157,6 +185,9 @@
         .container-box {
             margin: 30px 15px;
             padding: 30px;
+        }
+        .button-container {
+            text-align: center;
         }
     }
   </style>
@@ -200,7 +231,6 @@
 
       <p>
         👉 <strong>Step 1:</strong> Create a free Graphy account using this 
-        <!-- START: MODIFIED LINK -->
         <a 
           onclick="window.open('https://www.graphy.com?fpr=siva-prasad52', '_blank')" 
           class="protected-link"
@@ -208,12 +238,24 @@
           tabindex="0"
           aria-label="Create a free Graphy account (opens in a new tab)"
         ><u>link</u></a>.
-        <!-- END: MODIFIED LINK -->
       </p>
       
       <p>
-        👉 <strong>Step 2:</strong> Once signed up, go to your dashboard and click “Become an Affiliate”.
+        👉 <strong>Step 2:</strong> Once signed up, click the button below:
       </p>
+      <div class="button-container">
+        <!-- START: MODIFIED BUTTON WITH PROTECTED URL -->
+        <a 
+          onclick="window.open('https://spm.graphy.com/dashboard', '_blank')" 
+          class="affiliate-button"
+          role="button" 
+          tabindex="0"
+          aria-label="Become an Affiliate (opens dashboard in a new tab)"
+        >
+          Become an Affiliate
+        </a>
+        <!-- END: MODIFIED BUTTON -->
+      </div>
 
       <p>
         👉 <strong>Step 3:</strong> Start sharing your unique referral link and earn money!
